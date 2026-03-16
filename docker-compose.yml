@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    container_name: winxi-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: winxi
+      POSTGRES_USER: winxi_user
+      POSTGRES_PASSWORD: <DB_PASSWORD>
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
