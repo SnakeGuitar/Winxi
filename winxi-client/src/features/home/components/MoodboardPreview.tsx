@@ -35,8 +35,8 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
         }}
       >
         <div className="collage-grid__header">
-          <span className="collage-mobile__label">{t('home.collage.by')}</span>
-          <span className="collage-mobile__title">{t('home.collage.title')}</span>
+          <span className="collage-mobile__label" style={{ color: 'var(--text-muted)' }}>{t('home.collage.by')}</span>
+          <span className="collage-mobile__title" style={{ color: 'var(--text-primary)' }}>{t('home.collage.title')}</span>
         </div>
 
         <img src={linImg} alt="lin character" className="collage-grid__img collage-grid__img--main" />
@@ -59,15 +59,15 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
         </div>
 
         <div className="collage-grid__note">
-          <p className="collage-mock-note__heading">{t('home.collage.noteHeading')}</p>
-          <p className="collage-mock-note__body">{t('home.collage.noteBody')}</p>
+          <p className="collage-mock-note__heading" style={{ color: 'var(--text-primary)' }}>{t('home.collage.noteHeading')}</p>
+          <p className="collage-mock-note__body" style={{ color: 'var(--text-secondary)' }}>{t('home.collage.noteBody')}</p>
         </div>
       </div>
 
       <div className="collage-mobile">
         <div className="collage-mobile__header">
-          <span className="collage-mobile__label">{t('home.collage.by')}</span>
-          <span className="collage-mobile__title">{t('home.collage.title')}</span>
+          <span className="collage-mobile__label" style={{ color: 'var(--text-muted)' }}>{t('home.collage.by')}</span>
+          <span className="collage-mobile__title" style={{ color: 'var(--text-primary)' }}>{t('home.collage.title')}</span>
         </div>
 
         <div className="collage-mobile__images">
@@ -90,8 +90,8 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
         </div>
 
         <div className="collage-mock-note">
-          <p className="collage-mock-note__heading">{t('home.collage.noteHeading')}</p>
-          <p className="collage-mock-note__body">
+          <p className="collage-mock-note__heading" style={{ color: 'var(--text-primary)' }}>{t('home.collage.noteHeading')}</p>
+          <p className="collage-mock-note__body" style={{ color: 'var(--text-secondary)' }}>
             {t('home.collage.noteBody')}
           </p>
         </div>

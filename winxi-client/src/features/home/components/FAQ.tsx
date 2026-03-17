@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
       {...FADE_UP_ANIMATION(0.3)}
       style={{ padding: '120px 0', maxWidth: '800px', margin: '0 auto' }}
     >
-      <h2 style={{ fontSize: '2.8rem', fontWeight: 800, textAlign: 'center', marginBottom: '60px', letterSpacing: '-0.02em' }}>
+      <h2 style={{ fontSize: '2.8rem', fontWeight: 800, textAlign: 'center', marginBottom: '60px', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
         {t('home.faq.title')}
       </h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -30,8 +30,8 @@ const FAQ: React.FC = () => {
             key={idx}
             onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
             style={{ 
-              background: '#fff', 
-              border: '1px solid rgba(0,0,0,0.08)', 
+              background: 'var(--bg-secondary)', 
+              border: '1px solid var(--border-color)', 
               borderRadius: '20px', 
               padding: '24px',
               cursor: 'pointer',
@@ -39,9 +39,9 @@ const FAQ: React.FC = () => {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600 }}>{item.q}</h3>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)' }}>{item.q}</h3>
               <motion.div animate={{ rotate: openIdx === idx ? 180 : 0 }}>
-                <ChevronDown size={20} color="#999" />
+                <ChevronDown size={20} color="var(--text-muted)" />
               </motion.div>
             </div>
             {openIdx === idx && (
@@ -50,7 +50,7 @@ const FAQ: React.FC = () => {
                 animate={{ height: 'auto', opacity: 1 }}
                 style={{ overflow: 'hidden', marginTop: '16px' }}
               >
-                <p style={{ color: '#666', lineHeight: 1.6, fontSize: '1.1rem' }}>{item.a}</p>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1.1rem' }}>{item.a}</p>
               </motion.div>
             )}
           </div>

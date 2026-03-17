@@ -16,12 +16,12 @@ const Hero: React.FC = () => {
       style={{
         paddingTop: '100px',
         paddingBottom: '0',
-        maxWidth: '640px',
+        maxWidth: '540px',
       }}
     >
       <span
         className="label"
-        style={{ marginBottom: '24px', display: 'block', color: '#999' }}
+        style={{ marginBottom: '24px', display: 'block', color: 'var(--text-muted)' }}
       >
         {t('home.hero.eyebrow')}
       </span>
@@ -32,9 +32,10 @@ const Hero: React.FC = () => {
           fontWeight: 800,
           lineHeight: 1.05,
           letterSpacing: '-0.04em',
-          color: '#000000',
+          color: 'var(--text-primary)',
           marginBottom: '28px',
           whiteSpace: 'pre-line',
+          transition: 'color 0.3s ease',
         }}
       >
         {t('home.hero.headline')}
@@ -43,11 +44,12 @@ const Hero: React.FC = () => {
       <p
         style={{
           fontSize: '1rem',
-          color: '#666',
+          color: 'var(--text-secondary)',
           lineHeight: 1.7,
           maxWidth: '420px',
           marginBottom: '44px',
           fontWeight: 400,
+          transition: 'color 0.3s ease',
         }}
       >
         {t('home.hero.body')}

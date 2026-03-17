@@ -21,10 +21,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, label, title, des
       transition={{ delay, duration: 0.7 }}
       style={{
         padding: '40px 32px 40px 0',
-        borderTop: '1px solid rgba(0,0,0,0.06)',
+        borderTop: '1px solid var(--border-color)',
         display: 'flex',
         flexDirection: 'column',
         gap: '18px',
+        transition: 'border-color 0.3s ease',
       }}
     >
       <div
@@ -39,11 +40,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, label, title, des
             width: '38px',
             height: '38px',
             borderRadius: '8px',
-            background: 'rgba(0, 0, 0, 0.04)',
+            background: 'var(--bg-secondary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#000',
+            color: 'var(--text-primary)',
+            border: '1px solid var(--border-color)',
           }}
         >
           <Icon size={18} />
@@ -51,7 +53,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, label, title, des
         <span
           style={{
             fontSize: '0.6rem',
-            color: '#ccc',
+            color: 'var(--text-muted)',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             fontWeight: 500,
@@ -66,7 +68,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, label, title, des
           style={{
             fontSize: '1.05rem',
             fontWeight: 600,
-            color: '#000',
+            color: 'var(--text-primary)',
             marginBottom: '8px',
             letterSpacing: '-0.02em',
           }}
@@ -76,7 +78,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, label, title, des
         <p
           style={{
             fontSize: '0.85rem',
-            color: '#888',
+            color: 'var(--text-secondary)',
             lineHeight: 1.65,
             fontWeight: 400,
           }}

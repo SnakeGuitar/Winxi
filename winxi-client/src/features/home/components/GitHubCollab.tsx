@@ -15,10 +15,12 @@ const GitHubCollab: React.FC = () => {
       {...FADE_UP_ANIMATION(0.2)}
       style={{
         padding: '100px 0',
-        background: '#f9f9f9',
+        background: 'var(--bg-secondary)',
         borderRadius: '32px',
         margin: '60px 0',
         textAlign: 'center',
+        border: '1px solid var(--border-color)',
+        transition: 'background 0.3s ease, border-color 0.3s ease',
       }}
     >
       <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 24px' }}>
@@ -26,18 +28,18 @@ const GitHubCollab: React.FC = () => {
           style={{ 
             display: 'inline-flex', 
             padding: '12px', 
-            background: '#000', 
+            background: 'var(--text-primary)', 
             borderRadius: '16px', 
-            color: '#fff',
+            color: 'var(--bg-primary)',
             marginBottom: '24px'
           }}
         >
           <Github size={32} />
         </div>
-        <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '20px', letterSpacing: '-0.02em' }}>
+        <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '20px', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
           {t('home.github.title')}
         </h2>
-        <p style={{ fontSize: '1.1rem', color: '#666', lineHeight: 1.6, marginBottom: '40px' }}>
+        <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>
           {t('home.github.desc')}
         </p>
         <motion.a

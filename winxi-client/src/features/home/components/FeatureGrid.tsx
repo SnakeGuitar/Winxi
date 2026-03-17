@@ -32,7 +32,7 @@ const FeatureGrid: React.FC = () => {
         {...FADE_UP_ANIMATION(0.25)}
         style={{
           paddingTop: '160px',
-          borderTop: '1px solid rgba(0,0,0,0.06)',
+          borderTop: '1px solid var(--border-color)',
           marginBottom: '20px',
         }}
       />

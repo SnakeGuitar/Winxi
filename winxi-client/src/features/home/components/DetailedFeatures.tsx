@@ -44,12 +44,12 @@ const DetailedFeatures: React.FC = () => {
                 width: '100%', 
                 aspectRatio: '16/9',
                 borderRadius: '24px', 
-                background: section.key === 'canvas' ? '#EEF2FF' : '#FDF2F8',
+                background: 'var(--bg-secondary)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '1px solid rgba(0,0,0,0.05)',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
+                border: '1px solid var(--border-color)',
+                boxShadow: 'var(--shadow-md)'
               }}
             >
               <div 
@@ -57,17 +57,17 @@ const DetailedFeatures: React.FC = () => {
                   width: '60%', 
                   height: '40%', 
                   borderRadius: '12px', 
-                  background: section.key === 'canvas' ? '#818CF8' : '#F472B6',
-                  opacity: 0.2
+                  background: section.key === 'canvas' ? 'var(--accent-teal)' : 'var(--accent-rose)',
+                  opacity: 0.15
                 }} 
               />
             </div>
           </div>
           <div style={{ flex: '1', minWidth: '320px' }}>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '24px', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '24px', letterSpacing: '-0.03em', lineHeight: 1.1, color: 'var(--text-primary)' }}>
               {t(`home.detailedFeatures.${section.key}.title`)}
             </h2>
-            <p style={{ fontSize: '1.2rem', color: '#666', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               {t(`home.detailedFeatures.${section.key}.desc`)}
             </p>
           </div>
