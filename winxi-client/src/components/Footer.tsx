@@ -45,14 +45,7 @@ const Footer: React.FC = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000' }}>Winxi</span>
             <span style={{ fontSize: '0.7rem', color: '#bbb' }}>{t('common.footer.by')}</span>
-            <a
-              href="https://x.com/SnakeGuitar"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000', textDecoration: 'none' }}
-            >
-              @SnakeGuitar
-            </a>
+            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000' }}>SnakeGuitar</span>
           </div>
         </motion.div>
       </div>
