@@ -1,20 +1,21 @@
 /* Collage grid — desktop only, fixed position */
 .collage-grid {
-  position: fixed;
-  top: 80px;
-  right: 5%;
-  width: 760px;
+  position: absolute;
+  top: 60px;
+  right: 8%;
+  width: clamp(400px, 45vw, 760px);
   pointer-events: none;
   z-index: 0;
   user-select: none;
   display: grid;
-  grid-template-columns: 480px 280px;
+  grid-template-columns: 1.7fr 1fr;
   grid-template-rows: auto auto auto auto;
   gap: 0;
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  background: var(--bg-surface);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-grid__header {
@@ -23,8 +24,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  background: #fafafa;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-grid__img {
@@ -49,16 +51,18 @@
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  background: #fff;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-grid__note {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
   padding: 14px 16px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  background: #fafafa;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 @media (max-width: 1024px) {
@@ -70,9 +74,11 @@
   display: none;
   flex-direction: column;
   margin-bottom: 60px;
-  border: 1px solid rgba(0,0,0,0.07);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   overflow: hidden;
+  background: var(--bg-surface);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-mobile__header {
@@ -80,8 +86,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  background: #fafafa;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-mobile__label {
@@ -89,13 +96,13 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #bbb;
+  color: var(--text-muted);
 }
 
 .collage-mobile__title {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #000;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -117,8 +124,9 @@
   display: flex;
   gap: 10px;
   padding: 12px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  background: #fff;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-mock-palette {
@@ -148,8 +156,8 @@
   font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: #888;
-  background: rgba(0,0,0,0.04);
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
   border-radius: 20px;
   padding: 3px 8px;
 }
@@ -157,21 +165,22 @@
 /* Row 3 — note card */
 .collage-mock-note {
   padding: 14px 16px;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  background: #fafafa;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .collage-mock-note__heading {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
   margin-bottom: 4px;
 }
 
 .collage-mock-note__body {
   font-size: 0.72rem;
-  color: #999;
+  color: var(--text-secondary);
   line-height: 1.55;
 }
 
