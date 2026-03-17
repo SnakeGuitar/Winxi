@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from winxi.auth.models import User
-from winxi.users.schemas import UserCreate, UserUpdate
-from winxi.users.utils import password_hash
+from .models import User
+from .schemas import UserCreate, UserUpdate
+from .utils import password_hash
 
 def get_user(db: Session, user_id: int):
     return db.query(User).filter(User.id == user_id).first()
@@ -11,33 +11,32 @@ def get_user_by_username(db: Session, username: str):
 
 
 def create_user(db: Session, user: UserCreate):
-    db_user = User(username=user.username, hashed_password=password_hash(user.password))
+    db_user = User(
+        username=user.username,
+        email=user.email,
+        hashed_password=password_hash(user.password)
+    )
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
 
 
-def update_user_email(db: Session, user: UserUpdate):
-    user.email = user.email
+def update_user(db: Session, db_user: User, user_update: UserUpdate):
+    update_data = user_update.model_dump(exclude_unset=True)
+    
+    if "password" in update_data:
+        db_user.hashed_password = password_hash(update_data.pop("password"))
+    
+    for key, value in update_data.items():
+        setattr(db_user, key, value)
+    
     db.commit()
-    db.refresh(user)
-    return user
+    db.refresh(db_user)
+    return db_user
 
 
-def update_user_username(db: Session, user: UserUpdate):
-    user.username = user.username
+def delete_user(db: Session, db_user: User):
+    db.delete(db_user)
     db.commit()
-
-
-def update_user_password(db: Session, user: UserUpdate):
-    user.hashed_password = password_hash(user.password)
-    db.commit()
-    db.refresh(user)
-    return user
-
-
-def delete_user(db: Session, user: User):
-    db.delete(user)
-    db.commit()
-    return
+    return True
