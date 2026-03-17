@@ -17,7 +17,13 @@ const Home: React.FC = () => {
   const { scrollOpacity, scrollTranslateX, isVisible } = useScrollProgress();
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ 
+      backgroundColor: 'var(--bg-primary)', 
+      minHeight: '100vh', 
+      overflowX: 'hidden',
+      transition: 'background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+      position: 'relative'
+    }}>
       <div className="container">
         <Hero />
         <MoodboardPreview

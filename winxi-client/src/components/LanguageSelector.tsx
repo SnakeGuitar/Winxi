@@ -41,7 +41,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang, onLang
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ background: 'rgba(0,0,0,0.03)' }}
+        whileHover={{ background: 'var(--border-color)' }}
         whileTap={{ scale: 0.98 }}
         style={{
           display: 'flex',
@@ -50,15 +50,16 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang, onLang
           padding: '6px 10px',
           borderRadius: '10px',
           cursor: 'pointer',
-          transition: 'all 0.2s ease',
+          transition: 'all 0.3s ease',
+          whiteSpace: 'nowrap',
         }}
       >
-        <Globe size={14} color="#555" />
-        <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#333' }}>
+        <Globe size={14} color="var(--text-secondary)" />
+        <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-primary)' }}>
           {currentOption.short}
         </span>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown size={12} color="#999" />
+          <ChevronDown size={12} color="var(--text-muted)" />
         </motion.div>
       </motion.div>
 
@@ -75,12 +76,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang, onLang
               right: 0,
               minWidth: '140px',
               padding: '6px',
-              background: 'rgba(255, 255, 255, 0.8)',
-              backdropFilter: 'blur(25px)',
-              WebkitBackdropFilter: 'blur(25px)',
+              background: 'var(--glass-bg)',
+              backdropFilter: 'var(--glass-blur)',
+              WebkitBackdropFilter: 'var(--glass-blur)',
               borderRadius: '16px',
-              border: '1px solid rgba(0,0,0,0.08)',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+              border: '1px solid var(--border-color)',
+              boxShadow: 'var(--shadow-lg)',
               zIndex: 100,
             }}
           >
@@ -93,7 +94,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang, onLang
                   onLangChange(lang.code);
                   setIsOpen(false);
                 }}
-                whileHover={{ background: 'rgba(0,0,0,0.04)', x: 2 }}
+                whileHover={{ background: 'var(--border-color)', x: 2 }}
                 style={{
                   padding: '8px 12px',
                   borderRadius: '10px',
@@ -107,14 +108,14 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLang, onLang
                 <span style={{ 
                   fontSize: '0.8rem', 
                   fontWeight: currentLang === lang.code ? 600 : 400,
-                  color: currentLang === lang.code ? '#000' : '#666'
+                  color: currentLang === lang.code ? 'var(--text-primary)' : 'var(--text-secondary)'
                 }}>
                   {lang.label}
                 </span>
                 {currentLang === lang.code && (
                   <motion.div 
                     layoutId="active-dot" 
-                    style={{ width: 4, height: 4, borderRadius: '50%', background: '#000' }} 
+                    style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--accent-teal)' }} 
                   />
                 )}
               </motion.div>

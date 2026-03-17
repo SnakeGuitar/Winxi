@@ -14,8 +14,9 @@ const Footer: React.FC = () => {
         marginTop: '120px',
         paddingTop: '80px',
         paddingBottom: '60px',
-        borderTop: '1px solid rgba(0,0,0,0.06)',
-        background: '#ffffff',
+        borderTop: '1px solid var(--border-color)',
+        background: 'var(--bg-primary)',
+        transition: 'background 0.3s ease, border-color 0.3s ease',
       }}
     >
       <div className="container">
@@ -31,21 +32,21 @@ const Footer: React.FC = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000' }}>{t('common.footer.about')}</span>
-            <span style={{ fontSize: '0.7rem', color: '#bbb' }}>•</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>{t('common.footer.about')}</span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>•</span>
             <a
               href="https://github.com/SnakeGuitar/Winxi"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontSize: '0.8rem', color: '#888', textDecoration: 'none' }}
+              style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none' }}
             >
               GitHub
             </a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000' }}>Winxi</span>
-            <span style={{ fontSize: '0.7rem', color: '#bbb' }}>{t('common.footer.by')}</span>
-            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#000' }}>SnakeGuitar</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>Winxi</span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{t('common.footer.by')}</span>
+            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>SnakeGuitar</span>
           </div>
         </motion.div>
       </div>

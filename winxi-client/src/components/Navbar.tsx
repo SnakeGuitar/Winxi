@@ -7,7 +7,6 @@ import ThemeToggle from './ThemeToggle';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const [darkMode, setDarkMode] = React.useState(false);
 
   const navLinks = [
     { key: 'moodboards', href: '#moodboards' },
@@ -28,10 +27,11 @@ const Navbar: React.FC = () => {
         justifyContent: 'space-between',
         padding: '0 32px',
         zIndex: 1000,
-        background: 'rgba(255, 255, 255, 0.85)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.04)',
+        background: 'var(--glass-bg)',
+        backdropFilter: 'var(--glass-blur)',
+        WebkitBackdropFilter: 'var(--glass-blur)',
+        borderBottom: '1px solid var(--border-color)',
+        transition: 'background 0.3s ease, border-color 0.3s ease',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -40,14 +40,14 @@ const Navbar: React.FC = () => {
             fontSize: '0.95rem',
             fontWeight: 700,
             letterSpacing: '-0.03em',
-            color: '#000000',
+            color: 'var(--text-primary)',
           }}
         >
           Winxi
         </span>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '36px', flexShrink: 0 }}>
         {navLinks.map((link) => (
           <NavLink key={link.key} href={link.href}>
             {t(`common.nav.${link.key}`)}
@@ -61,13 +61,13 @@ const Navbar: React.FC = () => {
           onLangChange={(l) => i18n.changeLanguage(l)} 
         />
         
-        <ThemeToggle darkMode={darkMode} onToggle={() => setDarkMode(!darkMode)} />
+        <ThemeToggle />
 
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="btn btn-ghost btn-sm"
-          style={{ color: '#666', borderColor: 'transparent' }}
+          style={{ color: 'var(--text-secondary)', borderColor: 'transparent' }}
         >
           {t('common.auth.login')}
         </motion.button>

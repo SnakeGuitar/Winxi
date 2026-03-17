@@ -15,13 +15,15 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
       href={href}
       style={{
         fontSize: '0.78rem',
-        color: '#999',
-        fontWeight: 400,
+        color: 'var(--text-muted)',
+        fontWeight: 500,
         letterSpacing: '0.01em',
         textDecoration: 'none',
+        whiteSpace: 'nowrap',
+        transition: 'color 0.3s ease',
       }}
-      whileHover={{ color: '#000000' }}
-      transition={{ duration: 0.15 }}
+      whileHover={{ color: 'var(--text-primary)' }}
+      transition={{ duration: 0.2 }}
     >
       {children}
     </motion.a>
