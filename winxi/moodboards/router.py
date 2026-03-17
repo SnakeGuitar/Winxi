@@ -4,7 +4,8 @@ from typing import List
 
 from winxi.dependencies import get_db, get_current_user
 from winxi.users.models import User
-from . import service, schemas
+import service
+import schemas
 
 router = APIRouter(prefix="/moodboards", tags=["moodboards"])
 
