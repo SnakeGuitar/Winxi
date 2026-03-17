@@ -14,5 +14,27 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
 
+  api:
+    build: 
+      context: .
+      dockerfile: winxi-server.Dockerfile
+    container_name: winxi-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  client:
+    build:
+      context: ./winxi-client
+    container_name: winxi-client
+    restart: unless-stopped
+    ports:
+      - 5173:5173
+    depends_on:
+      - api
+
 volumes:
   postgres_data:

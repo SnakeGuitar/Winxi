@@ -13,11 +13,14 @@ REFRESH_TOKEN_EXPIRE_DAYS = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "7"))
 # Password Hashing
 password_hash = PasswordHash.recommended()
 
+
 def hash_password(password: str) -> str:
     return password_hash.hash(password)
 
+
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return password_hash.verify(plain_password, hashed_password)
+
 
 # JWT Operations
 def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None) -> str:
@@ -29,15 +32,18 @@ def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
+
 def decode_token(token: str) -> Union[dict, None]:
     try:
         return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
     except Exception:
         return None
 
+
 # Datetime Utilities
 def get_utc_now() -> datetime:
     return datetime.now(timezone.utc)
+
 
 def get_refresh_token_expiration() -> datetime:
     return get_utc_now() + timedelta(days=REFRESH_TOKEN_EXPIRE_DAYS)
