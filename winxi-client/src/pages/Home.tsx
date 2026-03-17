@@ -2,6 +2,10 @@ import React from 'react';
 import Hero from '../features/home/components/Hero';
 import MoodboardPreview from '../features/home/components/MoodboardPreview';
 import FeatureGrid from '../features/home/components/FeatureGrid';
+import DetailedFeatures from '../features/home/components/DetailedFeatures';
+import GitHubCollab from '../features/home/components/GitHubCollab';
+import FAQ from '../features/home/components/FAQ';
+import FinalCTA from '../features/home/components/FinalCTA';
 import Footer from '../components/Footer';
 import { useScrollProgress } from '../features/home/hooks/useScrollProgress';
 
@@ -10,29 +14,27 @@ import { useScrollProgress } from '../features/home/hooks/useScrollProgress';
  * Composes the Hero, MoodboardPreview, and FeatureGrid sections.
  */
 const Home: React.FC = () => {
-  const { scrollProgress, scrollOpacity, scrollTranslateX } = useScrollProgress();
+  const { scrollOpacity, scrollTranslateX, isVisible } = useScrollProgress();
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        paddingTop: '80px',
-        position: 'relative',
-        overflow: 'hidden',
-        background: '#ffffff',
-      }}
-    >
-      <MoodboardPreview
-        scrollOpacity={scrollOpacity}
-        scrollTranslateX={scrollTranslateX}
-        isVisible={scrollProgress < 1}
-      />
-
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', overflowX: 'hidden' }}>
+      <div className="container">
         <Hero />
+        <MoodboardPreview
+          scrollOpacity={scrollOpacity}
+          scrollTranslateX={scrollTranslateX}
+          isVisible={isVisible}
+        />
         <FeatureGrid />
-      </div>
 
+        <DetailedFeatures />
+
+        <GitHubCollab />
+
+        <FAQ />
+
+        <FinalCTA />
+      </div>
       <Footer />
     </div>
   );
