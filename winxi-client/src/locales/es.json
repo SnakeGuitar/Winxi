@@ -1,0 +1,52 @@
+{
+  "common": {
+    "nav": {
+      "moodboards": "Moodboards",
+      "inspire": "Inspiración",
+      "library": "Biblioteca"
+    },
+    "auth": {
+      "login": "Iniciar Sesión",
+      "getStarted": "Empezar"
+    },
+    "footer": {
+      "about": "Acerca de",
+      "by": "por"
+    },
+    "buttons": {
+      "startCreating": "Comenzar a crear",
+      "viewProjects": "Ver proyectos"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "winxi®",
+      "headline": "Aquí para ayudarte\na organizar\ntu visión.",
+      "body": "El espacio de trabajo premium para moodboards, guías de estilo e inspiración creativa. Creado para diseñadores que cuidan cada detalle."
+    },
+    "collage": {
+      "by": "por Moki",
+      "title": "Estilo Rosa y Azur",
+      "noteHeading": "Dirección Estética",
+      "noteBody": "Tonos rosa suave con azur fresco: delicado, soñador, centrado en el personaje.",
+      "tags": ["soft girl", "anime", "pastel", "etéreo", "2D"]
+    },
+    "features": {
+      "design": {
+        "label": "Diseño",
+        "title": "Diseños Intuitivos",
+        "desc": "Arrastra y suelta elementos para componer el tablero perfecto para tu visión creativa."
+      },
+      "ai": {
+        "label": "IA",
+        "title": "Inspiración de IA",
+        "desc": "Genera paletas y sugerencias de estilo directamente desde el contenido de tu moodboard."
+      },
+      "collab": {
+        "label": "Colaborar",
+        "title": "Compartir sin interrupciones",
+        "desc": "Comparte tus tableros con cualquier persona y colabora en tiempo real en la creación de estilos."
+      }
+    }
+  }
+}

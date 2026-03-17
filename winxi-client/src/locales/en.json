@@ -1,0 +1,52 @@
+{
+  "common": {
+    "nav": {
+      "moodboards": "Moodboards",
+      "inspire": "Inspire",
+      "library": "Library"
+    },
+    "auth": {
+      "login": "Login",
+      "getStarted": "Get Started"
+    },
+    "footer": {
+      "about": "About",
+      "by": "by"
+    },
+    "buttons": {
+      "startCreating": "Start Creating",
+      "viewProjects": "View Projects"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "winxi®",
+      "headline": "Here to help\nyou organize\nyour vision.",
+      "body": "The premium workspace for moodboards, style guides, and creative inspiration. Built for designers who care about every detail."
+    },
+    "collage": {
+      "by": "by Moki",
+      "title": "Rose & Azure Mood",
+      "noteHeading": "Aesthetic Direction",
+      "noteBody": "Soft rose tones meet cool azure — delicate, dreamy, character-driven.",
+      "tags": ["soft girl", "anime", "pastel", "ethereal", "2D"]
+    },
+    "features": {
+      "design": {
+        "label": "Design",
+        "title": "Intuitive Layouts",
+        "desc": "Drag and drop elements to compose the perfect board for your creative vision."
+      },
+      "ai": {
+        "label": "AI",
+        "title": "AI Inspiration",
+        "desc": "Generate palettes and style suggestions directly from your moodboard content."
+      },
+      "collab": {
+        "label": "Collab",
+        "title": "Seamless Sharing",
+        "desc": "Share your boards with anyone and collaborate in real-time on mood creation."
+      }
+    }
+  }
+}

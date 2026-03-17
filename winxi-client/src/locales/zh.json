@@ -1,0 +1,52 @@
+{
+  "common": {
+    "nav": {
+      "moodboards": "灵感板",
+      "inspire": "灵感",
+      "library": "库"
+    },
+    "auth": {
+      "login": "登录",
+      "getStarted": "开始使用"
+    },
+    "footer": {
+      "about": "关于",
+      "by": "作者"
+    },
+    "buttons": {
+      "startCreating": "开始创建",
+      "viewProjects": "查看项目"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "winxi®",
+      "headline": "在这里帮助您\n整理您的\n创意愿景。",
+      "body": "专为追求细节的设计师打造的灵感板、风格指南和创意灵感高端工作区。"
+    },
+    "collage": {
+      "by": "作者 Moki",
+      "title": "玫瑰与蔚蓝氛围",
+      "noteHeading": "审美方向",
+      "noteBody": "柔和玫瑰色调遇上冷峻蔚蓝 —— 细腻、梦幻、角色驱动。",
+      "tags": ["软妹风", "动漫", "马卡龙色", "空灵", "2D"]
+    },
+    "features": {
+      "design": {
+        "label": "设计",
+        "title": "直观布局",
+        "desc": "拖放元素，为您创意愿景构建完美的灵感板。"
+      },
+      "ai": {
+        "label": "AI",
+        "title": "AI 灵感",
+        "desc": "直接根据灵感板内容生成调色板和风格建议。"
+      },
+      "collab": {
+        "label": "协作",
+        "title": "无缝分享",
+        "desc": "与任何人分享您的灵感板，实时协作共同创作。"
+      }
+    }
+  }
+}
