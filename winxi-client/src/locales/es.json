@@ -34,19 +34,46 @@
     "features": {
       "design": {
         "label": "Diseño",
-        "title": "Diseños Intuitivos",
-        "desc": "Arrastra y suelta elementos para componer el tablero perfecto para tu visión creativa."
+        "title": "Canvas Infinito",
+        "desc": "Un espacio ilimitado para organizar tus pensamientos y activos."
       },
       "ai": {
-        "label": "IA",
-        "title": "Inspiración de IA",
-        "desc": "Genera paletas y sugerencias de estilo directamente desde el contenido de tu moodboard."
+        "label": "Potenciado por IA",
+        "title": "Sugerencias Inteligentes",
+        "desc": "Generación inteligente de paletas y etiquetas para tus proyectos."
       },
       "collab": {
-        "label": "Colaborar",
-        "title": "Compartir sin interrupciones",
-        "desc": "Comparte tus tableros con cualquier persona y colabora en tiempo real en la creación de estilos."
+        "label": "Colaboración",
+        "title": "Sincronización en Tiempo Real",
+        "desc": "Trabajad juntos sin problemas, desde cualquier lugar."
       }
+    },
+    "detailedFeatures": {
+      "canvas": {
+        "title": "Desata tu creatividad en un lienzo infinito",
+        "desc": "Deja de preocuparte por los bordes. Nuestro lienzo infinito te permite arrastrar, soltar y organizar activos exactamente como los ves en tu mente. Desde fotografía de alta resolución hasta delicadas muestras de tela, Winxi lo maneja todo con elegancia."
+      },
+      "ai": {
+        "title": "Sugerencias inteligentes para flujos de trabajo más rápidos",
+        "desc": "Sube una imagen y deja que Winxi haga el trabajo pesado. Nuestra IA extrae paletas de colores, sugiere etiquetas relevantes e incluso identifica familias de fuentes, para que puedas concentrarte en la dirección artística."
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Qué tipos de archivos son compatibles?",
+      "a1": "Winxi admite los principales formatos de imagen (PNG, JPG, WebP), SVG e incluso códigos HEX de color. Estamos trabajando en la integración con video y Figma.",
+      "q2": "¿Es Winxi gratuito para código abierto?",
+      "a2": "Absolutamente. Winxi está construido por creadores para creadores. Nuestro espacio de trabajo principal siempre será gratuito para colaboradores individuales y proyectos de código abierto."
+    },
+    "github": {
+      "title": "Construido por la comunidad, para la comunidad",
+      "desc": "Winxi es un proyecto de código abierto. Creemos que el futuro de las herramientas creativas debe ser transparente y colaborativo. Si eres desarrollador, diseñador o entusiasta, nos encantaría tu ayuda.",
+      "btn": "Contribuir en GitHub"
+    },
+    "finalCta": {
+      "headline": "¿Listo para organizar tu visión?",
+      "subheadline": "Únete a miles de diseñadores que están construyendo el futuro de los moodboards.",
+      "btn": "Empieza Ahora"
     }
   }
 }

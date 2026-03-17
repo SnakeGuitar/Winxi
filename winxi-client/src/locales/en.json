@@ -34,19 +34,46 @@
     "features": {
       "design": {
         "label": "Design",
-        "title": "Intuitive Layouts",
-        "desc": "Drag and drop elements to compose the perfect board for your creative vision."
+        "title": "Infinity Canvas",
+        "desc": "A limitless space to organize your thoughts and assets."
       },
       "ai": {
-        "label": "AI",
-        "title": "AI Inspiration",
-        "desc": "Generate palettes and style suggestions directly from your moodboard content."
+        "label": "AI Powered",
+        "title": "Smart Suggestions",
+        "desc": "Intelligent color and tag generation for your projects."
       },
       "collab": {
-        "label": "Collab",
-        "title": "Seamless Sharing",
-        "desc": "Share your boards with anyone and collaborate in real-time on mood creation."
+        "label": "Collaboration",
+        "title": "Real-time Sync",
+        "desc": "Work together with your team seamlessly, anywhere."
       }
+    },
+    "detailedFeatures": {
+      "canvas": {
+        "title": "Unleash Your Creativity on an Infinite Canvas",
+        "desc": "Stop worrying about borders. Our infinite canvas allows you to drag, drop, and arrange assets exactly how you see them in your mind. From high-res photography to delicate fabric swatches, Winxi handles it all with grace."
+      },
+      "ai": {
+        "title": "Smart Suggestions for Faster Workflows",
+        "desc": "Upload an image and let Winxi do the heavy lifting. Our AI extracts color palettes, suggests relevant tags, and even identifies font families, so you can focus on the artistic direction."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "What file types are supported?",
+      "a1": "Winxi supports all major image formats (PNG, JPG, WebP), SVGs, and even color HEX codes. We're working on video and FIGMA integration.",
+      "q2": "Is Winxi free for open source?",
+      "a2": "Absolutely. Winxi is built by creators, for creators. Our core workspace will always remain free for individual contributors and open-source projects."
+    },
+    "github": {
+      "title": "Built by the community, for the community",
+      "desc": "Winxi is an open-source project. We believe the future of creative tools should be transparent and collaborative. Whether you are a developer, designer, or enthusiast, we would love your help.",
+      "btn": "Contribute on GitHub"
+    },
+    "finalCta": {
+      "headline": "Ready to organize your vision?",
+      "subheadline": "Join thousands of designers building the future of moodboards.",
+      "btn": "Get Started Now"
     }
   }
 }
