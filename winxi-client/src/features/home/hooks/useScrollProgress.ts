@@ -21,10 +21,12 @@ export const useScrollProgress = (threshold = 180) => {
 
   const scrollOpacity = 1 - scrollProgress;
   const scrollTranslateX = scrollProgress * 120;
+  const isVisible = scrollProgress < 0.95;
 
   return {
     scrollProgress,
     scrollOpacity,
     scrollTranslateX,
+    isVisible,
   };
 };

@@ -1,0 +1,80 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { FADE_UP_ANIMATION } from '../constants/homeConstants';
+import canvasImg from '../../../assets/canvas-mock.png';
+import aiImg from '../../../assets/ai-mock.png';
+
+/**
+ * Detailed feature sections with alternating image/text layouts (Z-pattern).
+ */
+const DetailedFeatures: React.FC = () => {
+  const { t } = useTranslation();
+
+  const sections = [
+    {
+      key: 'canvas',
+      image: canvasImg,
+      reverse: false,
+    },
+    {
+      key: 'ai',
+      image: aiImg,
+      reverse: true,
+    },
+  ];
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '160px', marginTop: '120px' }}>
+      {sections.map((section) => (
+        <motion.div
+          key={section.key}
+          {...FADE_UP_ANIMATION(0.2)}
+          style={{
+            display: 'flex',
+            flexDirection: section.reverse ? 'row-reverse' : 'row',
+            alignItems: 'center',
+            gap: '80px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <div style={{ flex: '1', minWidth: '320px' }}>
+            <div 
+              style={{ 
+                width: '100%', 
+                aspectRatio: '16/9',
+                borderRadius: '24px', 
+                background: section.key === 'canvas' ? '#EEF2FF' : '#FDF2F8',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid rgba(0,0,0,0.05)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.05)'
+              }}
+            >
+              <div 
+                style={{ 
+                  width: '60%', 
+                  height: '40%', 
+                  borderRadius: '12px', 
+                  background: section.key === 'canvas' ? '#818CF8' : '#F472B6',
+                  opacity: 0.2
+                }} 
+              />
+            </div>
+          </div>
+          <div style={{ flex: '1', minWidth: '320px' }}>
+            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '24px', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+              {t(`home.detailedFeatures.${section.key}.title`)}
+            </h2>
+            <p style={{ fontSize: '1.2rem', color: '#666', lineHeight: 1.7 }}>
+              {t(`home.detailedFeatures.${section.key}.desc`)}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+export default DetailedFeatures;

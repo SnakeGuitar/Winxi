@@ -34,7 +34,6 @@ const Hero: React.FC = () => {
           letterSpacing: '-0.04em',
           color: '#000000',
           marginBottom: '28px',
-          mixBlendMode: 'exclusion',
           whiteSpace: 'pre-line',
         }}
       >
@@ -49,7 +48,6 @@ const Hero: React.FC = () => {
           maxWidth: '420px',
           marginBottom: '44px',
           fontWeight: 400,
-          mixBlendMode: 'exclusion',
         }}
       >
         {t('home.hero.body')}
