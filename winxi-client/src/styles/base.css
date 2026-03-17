@@ -1,0 +1,100 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--t-base);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--t-base);
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ─── Typography ─── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+h2 { font-size: clamp(2rem,   5vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 3vw, 2rem);   }
+h4 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+h5 { font-size: 1rem;    font-weight: 600; letter-spacing: -0.01em; }
+h6 { font-size: 0.875rem; font-weight: 600; letter-spacing: 0; }
+
+p {
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+small { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Grain Texture Override */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -30%;
+  width: 160%;
+  height: 160%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: var(--grain-blend);
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain-drift 8s steps(1) infinite;
+  will-change: background-position;
+}
+
+@keyframes grain-drift {
+  0%   { background-position: 0%    0%;   }
+  10%  { background-position: -8%   -12%; }
+  20%  { background-position: 12%   8%;   }
+  30%  { background-position: -6%   18%;  }
+  40%  { background-position: 20%   -5%;  }
+  50%  { background-position: -14%  14%;  }
+  60%  { background-position: 6%    -20%; }
+  70%  { background-position: -20%  4%;   }
+  80%  { background-position: 10%   20%;  }
+  90%  { background-position: -4%   -8%;  }
+}
