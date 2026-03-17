@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
-
-interface ThemeToggleProps {
-  darkMode: boolean;
-  onToggle: () => void;
-}
+import { useTheme } from '../context/ThemeContext';
 
 /**
  * Button to toggle between light and dark modes.
- * Applies the 'dark' class to the document root.
+ * Uses the global ThemeContext.
  */
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ darkMode, onToggle }) => {
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
-  }, [darkMode]);
+const ThemeToggle: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
 
   return (
     <motion.button
-      onClick={onToggle}
+      onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.92 }}
       style={{
@@ -30,12 +25,13 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ darkMode, onToggle }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#999',
+        color: 'var(--text-muted)',
         marginRight: '4px',
+        transition: 'color 0.2s ease',
       }}
-      title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {darkMode ? <Sun size={15} /> : <Moon size={15} />}
+      {isDark ? <Sun size={15} /> : <Moon size={15} />}
     </motion.button>
   );
 };
