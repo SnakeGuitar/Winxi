@@ -3,7 +3,7 @@ import datetime
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from winxi.database import Base
-from winxi.auth.utils import get_utc_now, get_expiration_date
+from winxi.core.security import get_utc_now, get_refresh_token_expiration as get_expiration_date
 
 class Token(Base):
     __tablename__ = "tokens"

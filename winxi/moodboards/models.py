@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from winxi.database import Base
-from winxi.moodboards.utils import get_utc_now
+from winxi.core.security import get_utc_now
 
 class Image(Base):
     __tablename__ = "images"

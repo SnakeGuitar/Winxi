@@ -1,42 +1,33 @@
 from sqlalchemy.orm import Session
 from .models import User
 from .schemas import UserCreate, UserUpdate
-from .utils import password_hash
+from winxi.core.security import hash_password
+from winxi.users import repository
 
 def get_user(db: Session, user_id: int):
-    return db.query(User).filter(User.id == user_id).first()
+    return repository.get_user(db, user_id)
 
 def get_user_by_username(db: Session, username: str):
-    return db.query(User).filter(User.username == username).first()
+    return repository.get_user_by_username(db, username)
 
 
 def create_user(db: Session, user: UserCreate):
-    db_user = User(
-        username=user.username,
-        email=user.email,
-        hashed_password=password_hash(user.password)
-    )
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
-    return db_user
+    user_data = {
+        "username": user.username,
+        "email": user.email,
+        "hashed_password": hash_password(user.password)
+    }
+    return repository.create_user(db, user_data)
 
 
 def update_user(db: Session, db_user: User, user_update: UserUpdate):
     update_data = user_update.model_dump(exclude_unset=True)
     
     if "password" in update_data:
-        db_user.hashed_password = password_hash(update_data.pop("password"))
+        update_data["hashed_password"] = hash_password(update_data.pop("password"))
     
-    for key, value in update_data.items():
-        setattr(db_user, key, value)
-    
-    db.commit()
-    db.refresh(db_user)
-    return db_user
+    return repository.update_user(db, db_user, update_data)
 
 
 def delete_user(db: Session, db_user: User):
-    db.delete(db_user)
-    db.commit()
-    return True
+    return repository.delete_user(db, db_user)
