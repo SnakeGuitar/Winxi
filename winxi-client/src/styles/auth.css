@@ -47,6 +47,16 @@
   margin-top: var(--space-2);
 }
 
+.auth-error {
+  background: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+  font-size: 0.85rem;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
 .auth-footer {
   margin-top: var(--space-6);
   text-align: center;

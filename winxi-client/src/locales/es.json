@@ -7,7 +7,8 @@
     },
     "auth": {
       "login": "Iniciar Sesión",
-      "getStarted": "Empezar"
+      "getStarted": "Empezar",
+      "logout": "Cerrar Sesión"
     },
     "footer": {
       "about": "Acerca de",
@@ -74,6 +75,16 @@
       "headline": "¿Listo para organizar tu visión?",
       "subheadline": "Únete a miles de diseñadores que están construyendo el futuro de los moodboards.",
       "btn": "Empieza Ahora"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo electrónico o usuario",
+      "password": "Contraseña",
+      "submit": "Entrar",
+      "loading": "Entrando...",
+      "error": "Credenciales incorrectas"
     }
   }
 }
