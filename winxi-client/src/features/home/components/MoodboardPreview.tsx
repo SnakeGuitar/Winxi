@@ -35,7 +35,7 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
         }}
       >
         <div className="collage-grid__header">
-          <span className="collage-mobile__label" style={{ color: 'var(--text-muted)' }}>{t('home.collage.by')}</span>
+          <span className="collage-mobile__label">{t('home.collage.by')}</span>
           <span className="collage-mobile__title" style={{ color: 'var(--text-primary)' }}>{t('home.collage.title')}</span>
         </div>
 
@@ -66,7 +66,7 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
 
       <div className="collage-mobile">
         <div className="collage-mobile__header">
-          <span className="collage-mobile__label" style={{ color: 'var(--text-muted)' }}>{t('home.collage.by')}</span>
+          <span className="collage-mobile__label">{t('home.collage.by')}</span>
           <span className="collage-mobile__title" style={{ color: 'var(--text-primary)' }}>{t('home.collage.title')}</span>
         </div>
 

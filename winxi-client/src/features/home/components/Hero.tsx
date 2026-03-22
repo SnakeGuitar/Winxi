@@ -13,54 +13,25 @@ const Hero: React.FC = () => {
   return (
     <motion.div
       {...FADE_UP_ANIMATION(0)}
-      style={{
-        paddingTop: '100px',
-        paddingBottom: '0',
-        maxWidth: '540px',
-      }}
+      className="hero-section"
     >
-      <span
-        className="label"
-        style={{ marginBottom: '24px', display: 'block', color: 'var(--text-muted)' }}
-      >
+      <span className="label hero-label">
         {t('home.hero.eyebrow')}
       </span>
 
-      <h1
-        style={{
-          fontSize: 'clamp(2.8rem, 6vw, 4.6rem)',
-          fontWeight: 800,
-          lineHeight: 1.05,
-          letterSpacing: '-0.04em',
-          color: 'var(--text-primary)',
-          marginBottom: '28px',
-          whiteSpace: 'pre-line',
-          transition: 'color 0.3s ease',
-        }}
-      >
+      <h1 className="hero-title">
         {t('home.hero.headline')}
       </h1>
 
-      <p
-        style={{
-          fontSize: '1rem',
-          color: 'var(--text-secondary)',
-          lineHeight: 1.7,
-          maxWidth: '420px',
-          marginBottom: '44px',
-          fontWeight: 400,
-          transition: 'color 0.3s ease',
-        }}
-      >
+      <p className="hero-desc">
         {t('home.hero.body')}
       </p>
 
-      <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '40px' }}>
+      <div className="hero-actions">
         <motion.button
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg hero-btn-primary"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
         >
           {t('common.buttons.startCreating')} <ArrowRight size={16} />
         </motion.button>

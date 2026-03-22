@@ -1,0 +1,361 @@
+/* ============================================================
+   HOME PAGE & COMPONENTS STYLES
+   ============================================================ */
+
+/* ─── Hero.tsx ─── */
+.hero-section {
+  padding-top: 100px;
+  padding-bottom: 0;
+  max-width: 540px;
+}
+
+.hero-label {
+  margin-bottom: 24px;
+  display: block;
+  color: var(--text-muted);
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  white-space: pre-line;
+  transition: color 0.3s ease;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 44px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.hero-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── FinalCTA.tsx ─── */
+.cta-section {
+  margin: 100px 0;
+  padding: 120px 40px;
+  background: linear-gradient(135deg, #000 0%, #222 100%);
+  border-radius: 48px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+.cta-blob-1 {
+  top: -100px;
+  left: -100px;
+}
+
+.cta-blob-2 {
+  bottom: -100px;
+  right: -100px;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.cta-desc {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.cta-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 18px 48px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cta-btn-icon {
+  margin-left: 8px;
+}
+
+/* ─── FAQ.tsx ─── */
+.faq-section {
+  padding: 120px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.faq-answer-container {
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.faq-answer {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* ─── FeatureGrid.tsx ─── */
+.features-divider {
+  padding-top: 160px;
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  margin-bottom: 100px;
+}
+
+/* ─── FeatureCard.tsx ─── */
+.feature-card {
+  padding: 40px 32px 40px 0;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.3s ease;
+}
+
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.feature-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.feature-label {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.feature-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.feature-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ─── GitHubCollab.tsx ─── */
+.github-section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  border-radius: 32px;
+  margin: 60px 0;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.github-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.github-icon-wrap {
+  display: inline-flex;
+  padding: 12px;
+  background: var(--text-primary);
+  border-radius: 16px;
+  color: var(--bg-primary);
+  margin-bottom: 24px;
+}
+
+.github-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.github-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* ─── DetailedFeatures.tsx ─── */
+.detailed-section {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  margin-top: 120px;
+}
+
+.detailed-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.detailed-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.detailed-img-col {
+  flex: 1;
+  min-width: 320px;
+}
+
+.detailed-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.detailed-img-inner {
+  width: 60%;
+  height: 40%;
+  border-radius: 12px;
+  opacity: 0.15;
+}
+
+.detailed-img-inner--canvas {
+  background: var(--accent-teal);
+}
+
+.detailed-img-inner--ai {
+  background: var(--accent-rose);
+}
+
+.detailed-text-col {
+  flex: 1;
+  min-width: 320px;
+}
+
+.detailed-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.detailed-desc {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ─── MoodboardPreview.tsx (Misc overrides) ─── */
+.collage-mobile__label {
+  /* color handled by var already, but explicit here */
+  color: var(--text-muted);
+}

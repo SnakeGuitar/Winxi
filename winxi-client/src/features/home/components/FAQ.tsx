@@ -19,27 +19,20 @@ const FAQ: React.FC = () => {
   return (
     <motion.section
       {...FADE_UP_ANIMATION(0.3)}
-      style={{ padding: '120px 0', maxWidth: '800px', margin: '0 auto' }}
+      className="faq-section"
     >
-      <h2 style={{ fontSize: '2.8rem', fontWeight: 800, textAlign: 'center', marginBottom: '60px', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+      <h2 className="faq-title">
         {t('home.faq.title')}
       </h2>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      <div className="faq-list">
         {items.map((item, idx) => (
           <div 
             key={idx}
             onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-            style={{ 
-              background: 'var(--bg-secondary)', 
-              border: '1px solid var(--border-color)', 
-              borderRadius: '20px', 
-              padding: '24px',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
+            className="faq-item"
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)' }}>{item.q}</h3>
+            <div className="faq-header">
+              <h3 className="faq-question">{item.q}</h3>
               <motion.div animate={{ rotate: openIdx === idx ? 180 : 0 }}>
                 <ChevronDown size={20} color="var(--text-muted)" />
               </motion.div>
@@ -48,9 +41,9 @@ const FAQ: React.FC = () => {
               <motion.div 
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
-                style={{ overflow: 'hidden', marginTop: '16px' }}
+                className="faq-answer-container"
               >
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1.1rem' }}>{item.a}</p>
+                <p className="faq-answer">{item.a}</p>
               </motion.div>
             )}
           </div>

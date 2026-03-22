@@ -13,43 +13,25 @@ const GitHubCollab: React.FC = () => {
   return (
     <motion.section
       {...FADE_UP_ANIMATION(0.2)}
-      style={{
-        padding: '100px 0',
-        background: 'var(--bg-secondary)',
-        borderRadius: '32px',
-        margin: '60px 0',
-        textAlign: 'center',
-        border: '1px solid var(--border-color)',
-        transition: 'background 0.3s ease, border-color 0.3s ease',
-      }}
+      className="github-section"
     >
-      <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 24px' }}>
-        <div 
-          style={{ 
-            display: 'inline-flex', 
-            padding: '12px', 
-            background: 'var(--text-primary)', 
-            borderRadius: '16px', 
-            color: 'var(--bg-primary)',
-            marginBottom: '24px'
-          }}
-        >
+      <div className="github-container">
+        <div className="github-icon-wrap">
           <Github size={32} />
         </div>
-        <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '20px', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+        <h2 className="github-title">
           {t('home.github.title')}
         </h2>
-        <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '40px' }}>
+        <p className="github-desc">
           {t('home.github.desc')}
         </p>
         <motion.a
           href="https://github.com/SnakeGuitar/Winxi"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg github-btn"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
         >
           <Github size={18} /> {t('home.github.btn')}
         </motion.a>

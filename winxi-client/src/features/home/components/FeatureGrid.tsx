@@ -30,21 +30,12 @@ const FeatureGrid: React.FC = () => {
     <>
       <motion.div
         {...FADE_UP_ANIMATION(0.25)}
-        style={{
-          paddingTop: '160px',
-          borderTop: '1px solid var(--border-color)',
-          marginBottom: '20px',
-        }}
+        className="features-divider"
       />
 
       <motion.div
         {...FADE_UP_ANIMATION(0.4)}
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '0',
-          marginBottom: '100px',
-        }}
+        className="features-grid"
       >
         {features.map((f, i) => (
           <FeatureCard

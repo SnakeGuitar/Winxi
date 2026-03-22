@@ -21,49 +21,23 @@ const DetailedFeatures: React.FC = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '160px', marginTop: '120px' }}>
+    <div className="detailed-section">
       {sections.map((section) => (
         <motion.div
           key={section.key}
           {...FADE_UP_ANIMATION(0.2)}
-          style={{
-            display: 'flex',
-            flexDirection: section.reverse ? 'row-reverse' : 'row',
-            alignItems: 'center',
-            gap: '80px',
-            flexWrap: 'wrap',
-          }}
+          className={`detailed-row ${section.reverse ? 'detailed-row--reverse' : ''}`}
         >
-          <div style={{ flex: '1', minWidth: '320px' }}>
-            <div 
-              style={{ 
-                width: '100%', 
-                aspectRatio: '16/9',
-                borderRadius: '24px', 
-                background: 'var(--bg-secondary)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '1px solid var(--border-color)',
-                boxShadow: 'var(--shadow-md)'
-              }}
-            >
-              <div 
-                style={{ 
-                  width: '60%', 
-                  height: '40%', 
-                  borderRadius: '12px', 
-                  background: section.key === 'canvas' ? 'var(--accent-teal)' : 'var(--accent-rose)',
-                  opacity: 0.15
-                }} 
-              />
+          <div className="detailed-img-col">
+            <div className="detailed-img-wrap">
+              <div className={`detailed-img-inner detailed-img-inner--${section.key}`} />
             </div>
           </div>
-          <div style={{ flex: '1', minWidth: '320px' }}>
-            <h2 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '24px', letterSpacing: '-0.03em', lineHeight: 1.1, color: 'var(--text-primary)' }}>
+          <div className="detailed-text-col">
+            <h2 className="detailed-title">
               {t(`home.detailedFeatures.${section.key}.title`)}
             </h2>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+            <p className="detailed-desc">
               {t(`home.detailedFeatures.${section.key}.desc`)}
             </p>
           </div>
