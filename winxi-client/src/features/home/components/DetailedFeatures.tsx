@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FADE_UP_ANIMATION } from '../constants/homeConstants';
-import canvasImg from '../../../assets/canvas-mock.png';
-import aiImg from '../../../assets/ai-mock.png';
 
 /**
  * Detailed feature sections with alternating image/text layouts (Z-pattern).
@@ -14,12 +12,10 @@ const DetailedFeatures: React.FC = () => {
   const sections = [
     {
       key: 'canvas',
-      image: canvasImg,
       reverse: false,
     },
     {
       key: 'ai',
-      image: aiImg,
       reverse: true,
     },
   ];
