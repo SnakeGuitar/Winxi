@@ -16,10 +16,10 @@ class Moodboards(Base):
     __tablename__ = "moodboards"
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
-    title = Column(String(255), index=True)
-    description = Column(String(255), index=True)
-    cover_image = Column(String(255), index=True)
-    created_at = Column(DateTime, default=get_utc_now(), nullable=False)
+    title = Column(String(255), nullable=False)
+    description = Column(String(255))
+    cover_image = Column(String(255))
+    created_at = Column(DateTime, default=get_utc_now, nullable=False)
 
     user = relationship("User", backref="moodboards")
     images = relationship("Image", back_populates="moodboard", cascade="all, delete-orphan")

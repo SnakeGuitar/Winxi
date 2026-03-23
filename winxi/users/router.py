@@ -1,6 +1,5 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy.orm import Session
-from starlette import status
 
 from winxi.dependencies import get_db, get_current_user
 from winxi.users.models import User
@@ -12,9 +11,13 @@ router = APIRouter(prefix="/users", tags=["users"])
 
 @router.post("/", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
-    db_user = service.get_user_by_username(db, username=user.username)
-    if db_user:
+    if service.get_user_by_username(db, username=user.username):
         raise HTTPException(status_code=400, detail=f"Username '{user.username}' already registered")
+
+    db_user = db.query(User).filter(User.email == user.email).first()
+    if db_user:
+        raise HTTPException(status_code=400, detail="Email already registered")
+
     return service.create_user(db=db, user=user)
 
 

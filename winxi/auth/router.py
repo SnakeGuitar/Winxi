@@ -19,7 +19,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    access_token = service.create_access_token(data={"user_id": user.id})
+    access_token = service.generate_access_token(user.id)
     refresh_token_db = service.create_refresh_token(db, user_id=user.id)
 
     return {
@@ -38,7 +38,7 @@ def refresh_token(payload: schemas.TokenRefreshRequest, db: Session = Depends(ge
             detail="Invalid or expired refresh token",
         )
 
-    new_access_token = service.create_access_token(data={"user_id": db_token.user_id})
+    new_access_token = service.generate_access_token(db_token.user_id)
     return {"access_token": new_access_token, "token_type": "bearer"}
 
 

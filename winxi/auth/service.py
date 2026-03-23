@@ -7,6 +7,11 @@ from winxi.auth import repository as auth_repo
 from winxi.users import repository as users_repo
 
 
+def generate_access_token(user_id: int) -> str:
+    """Generate a new access token for the user."""
+    return create_access_token(data={"user_id": user_id})
+
+
 def login_user(db: Session, username: str, password: str):
     user = users_repo.get_user_by_username(db, username)
     if not user:

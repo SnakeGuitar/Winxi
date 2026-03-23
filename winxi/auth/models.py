@@ -10,8 +10,8 @@ class Token(Base):
     id = Column(Integer,primary_key=True,index=True)
     user_id = Column(Integer, ForeignKey("users.id"))
     refresh_token = Column(String(500),unique=True,index=True, nullable=False)
-    created_at = Column(DateTime, default=get_utc_now(), nullable=False)
-    expires_at = Column(DateTime, default=get_expiration_date(), nullable=False)
+    created_at = Column(DateTime, default=get_utc_now, nullable=False)
+    expires_at = Column(DateTime, default=get_expiration_date, nullable=False)
     is_revoked = Column(Boolean, default=False, index=True)
 
     user = relationship("User", backref="tokens")
