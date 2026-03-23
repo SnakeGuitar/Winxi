@@ -85,6 +85,14 @@
       "submit": "Entrar",
       "loading": "Entrando...",
       "error": "Credenciales incorrectas"
+    },
+    "signup": {
+      "title": "Crear Cuenta",
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Registrarse",
+      "loading": "Creando cuenta..."
     }
   }
 }

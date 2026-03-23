@@ -7,6 +7,8 @@ from sqlalchemy import pool
 
 from alembic import context
 from winxi.database import Base
+from winxi.users.models import User
+from winxi.auth.models import Token
 
 config = context.config
 

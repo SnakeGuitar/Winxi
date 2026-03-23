@@ -6,11 +6,13 @@ import LanguageSelector from './LanguageSelector';
 import ThemeToggle from './ThemeToggle';
 import { useAuth } from '../features/auth/hooks/useAuth';
 import LoginModal from '../features/auth/components/LoginModal';
+import SignupModal from '../features/auth/components/SignupModal';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { user, logout } = useAuth();
   const [showLogin, setShowLogin] = React.useState(false);
+  const [showSignup, setShowSignup] = React.useState(false);
 
   const navLinks = [
     { key: 'moodboards', href: '#moodboards' },
@@ -93,6 +95,7 @@ const Navbar: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="btn btn-primary btn-sm"
+                onClick={() => setShowSignup(true)}
               >
                 {t('common.auth.getStarted')}
               </motion.button>
@@ -103,6 +106,7 @@ const Navbar: React.FC = () => {
 
       <AnimatePresence>
         {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+        {showSignup && <SignupModal onClose={() => setShowSignup(false)} />}
       </AnimatePresence>
     </>
   );

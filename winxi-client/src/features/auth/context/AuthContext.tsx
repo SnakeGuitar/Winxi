@@ -12,6 +12,7 @@ interface AuthContextType {
   user: AuthUser | null;
   isLoading: boolean;
   login: (username: string, password: string) => Promise<void>;
+  register: (username: string, email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -41,13 +42,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setUser({ isAuthenticated: true });
   }, []);
 
+  const register = useCallback(async (username: string, email: string, password: string) => {
+    await authService.register(username, email, password);
+    setUser({ isAuthenticated: true });
+  }, []);
+
   const logout = useCallback(async () => {
     await authService.logout();
     setUser(null);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, isLoading, login, logout }}>
+    <AuthContext.Provider value={{ user, isLoading, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

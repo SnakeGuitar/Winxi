@@ -90,3 +90,19 @@ export async function logout(): Promise<void> {
   }
   clearTokens();
 }
+
+/**
+ * Register a new user and auto-login.
+ */
+export async function register(username: string, email: string, password: string): Promise<TokenResponse> {
+  const res = await fetch(`${API_BASE}/users/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, email, password }),
+  });
+
+  await handleResponse(res);
+
+  // Auto-login after successful registration
+  return login(username, password);
+}

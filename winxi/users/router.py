@@ -14,7 +14,7 @@ router = APIRouter(prefix="/users", tags=["users"])
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = service.get_user_by_username(db, username=user.username)
     if db_user:
-        raise HTTPException(status_code=400, detail="Username already registered")
+        raise HTTPException(status_code=400, detail=f"Username '{user.username}' already registered")
     return service.create_user(db=db, user=user)
 
 
