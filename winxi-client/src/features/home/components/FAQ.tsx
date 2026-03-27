@@ -12,8 +12,8 @@ const FAQ: React.FC = () => {
   const [openIdx, setOpenIdx] = React.useState<number | null>(0);
 
   const items = [
-    { q: t('home.faq.q1'), a: t('home.faq.a1') },
-    { q: t('home.faq.q2'), a: t('home.faq.a2') },
+    { key: 'q1', q: t('home.faq.q1'), a: t('home.faq.a1') },
+    { key: 'q2', q: t('home.faq.q2'), a: t('home.faq.a2') },
   ];
 
   return (
@@ -26,8 +26,8 @@ const FAQ: React.FC = () => {
       </h2>
       <div className="faq-list">
         {items.map((item, idx) => (
-          <div 
-            key={idx}
+          <div
+            key={item.key}
             onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
             className="faq-item"
           >

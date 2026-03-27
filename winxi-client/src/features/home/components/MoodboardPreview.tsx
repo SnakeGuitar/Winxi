@@ -47,13 +47,13 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
 
         <div className="collage-grid__meta">
           <div className="collage-mock-palette">
-            {HOME_PALETTE.map(c => (
-              <div key={c} className="collage-mock-swatch" style={{ background: c }} />
+            {HOME_PALETTE.map((c, i) => (
+              <div key={`palette-${i}`} className="collage-mock-swatch" style={{ background: c }} />
             ))}
           </div>
           <div className="collage-mock-tags">
-            {tags.map(t => (
-              <span key={t} className="collage-mock-tag">{t}</span>
+            {tags.map((tag, i) => (
+              <span key={`tag-${i}`} className="collage-mock-tag">{tag}</span>
             ))}
           </div>
         </div>
@@ -78,13 +78,13 @@ const MoodboardPreview: React.FC<MoodboardPreviewProps> = ({
 
         <div className="collage-mobile__row">
           <div className="collage-mock-palette">
-            {HOME_PALETTE.map(c => (
-              <div key={c} className="collage-mock-swatch" style={{ background: c }} />
+            {HOME_PALETTE.map((c, i) => (
+              <div key={`palette-${i}`} className="collage-mock-swatch" style={{ background: c }} />
             ))}
           </div>
           <div className="collage-mock-tags">
-            {tags.map(t => (
-              <span key={t} className="collage-mock-tag">{t}</span>
+            {tags.map((tag, i) => (
+              <span key={`tag-${i}`} className="collage-mock-tag">{tag}</span>
             ))}
           </div>
         </div>

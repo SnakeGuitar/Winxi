@@ -4,7 +4,6 @@ import * as authService from '../services/authService';
 /* ─── Types ─── */
 
 interface AuthUser {
-  /** We only know the user is authenticated; extend with profile data later */
   isAuthenticated: true;
 }
 
@@ -20,21 +19,40 @@ interface AuthContextType {
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/* ─── Helpers ─── */
+
+function isTokenExpired(token: string): boolean {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return typeof payload.exp === 'number' && payload.exp * 1000 < Date.now();
+  } catch {
+    return true;
+  }
+}
+
 /* ─── Provider ─── */
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // On mount, check if there is a stored token
   useEffect(() => {
     const token = authService.getAccessToken();
-    if (token) {
-      // We have a stored token — assume authenticated.
-      // A more robust approach would validate the token against the backend.
-      setUser({ isAuthenticated: true });
+    if (!token) {
+      setIsLoading(false);
+      return;
     }
-    setIsLoading(false);
+
+    if (!isTokenExpired(token)) {
+      setUser({ isAuthenticated: true });
+      setIsLoading(false);
+      return;
+    }
+
+    authService.refreshAccessToken()
+      .then(() => setUser({ isAuthenticated: true }))
+      .catch(() => authService.clearTokens())
+      .finally(() => setIsLoading(false));
   }, []);
 
   const login = useCallback(async (username: string, password: string) => {

@@ -20,10 +20,24 @@ export const clearTokens = () => {
 
 const API_BASE = '/api';
 
+const FETCH_TIMEOUT_MS = 10_000;
+
+function fetchWithTimeout(url: string, options: RequestInit): Promise<Response> {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(id));
+}
+
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {
-    const body = await res.json().catch(() => ({}));
-    throw new Error(body.detail || `Error ${res.status}`);
+    let message = `Error ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body.detail) message = body.detail;
+    } catch {
+      // JSON parse failed — keep the status-based message
+    }
+    throw new Error(message);
   }
   return res.json();
 }
@@ -48,7 +62,7 @@ export interface AccessTokenResponse {
 export async function login(username: string, password: string): Promise<TokenResponse> {
   const body = new URLSearchParams({ username, password });
 
-  const res = await fetch(`${API_BASE}/auth/login`, {
+  const res = await fetchWithTimeout(`${API_BASE}/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body,
@@ -66,7 +80,7 @@ export async function refreshAccessToken(): Promise<AccessTokenResponse> {
   const refreshToken = getRefreshToken();
   if (!refreshToken) throw new Error('No refresh token available');
 
-  const res = await fetch(`${API_BASE}/auth/refresh`, {
+  const res = await fetchWithTimeout(`${API_BASE}/auth/refresh`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ refresh_token: refreshToken }),
@@ -83,10 +97,12 @@ export async function refreshAccessToken(): Promise<AccessTokenResponse> {
 export async function logout(): Promise<void> {
   const token = getAccessToken();
   if (token) {
-    await fetch(`${API_BASE}/auth/logout`, {
+    await fetchWithTimeout(`${API_BASE}/auth/logout`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
-    }).catch(() => { /* ignore network errors on logout */ });
+    }).catch((err) => {
+      if (import.meta.env.DEV) console.error('[auth] Logout request failed — token may not be revoked on server:', err);
+    });
   }
   clearTokens();
 }
@@ -95,7 +111,7 @@ export async function logout(): Promise<void> {
  * Register a new user and auto-login.
  */
 export async function register(username: string, email: string, password: string): Promise<TokenResponse> {
-  const res = await fetch(`${API_BASE}/users/`, {
+  const res = await fetchWithTimeout(`${API_BASE}/users/`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, email, password }),
