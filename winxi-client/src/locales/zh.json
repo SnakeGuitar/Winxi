@@ -7,7 +7,8 @@
     },
     "auth": {
       "login": "登录",
-      "getStarted": "开始使用"
+      "getStarted": "开始使用",
+      "logout": "退出登录"
     },
     "footer": {
       "about": "关于",

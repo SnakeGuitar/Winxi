@@ -7,7 +7,8 @@
     },
     "auth": {
       "login": "로그인",
-      "getStarted": "시작하기"
+      "getStarted": "시작하기",
+      "logout": "로그아웃"
     },
     "footer": {
       "about": "정보",

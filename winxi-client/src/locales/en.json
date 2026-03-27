@@ -7,7 +7,8 @@
     },
     "auth": {
       "login": "Login",
-      "getStarted": "Get Started"
+      "getStarted": "Get Started",
+      "logout": "Logout"
     },
     "footer": {
       "about": "About",
