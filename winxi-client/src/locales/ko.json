@@ -76,5 +76,23 @@
       "subheadline": "무드보드의 미래를 만들어가는 수천 명의 디자이너와 함께하세요.",
       "btn": "지금 시작하기"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "로그인",
+      "email": "이메일 또는 사용자명",
+      "password": "비밀번호",
+      "submit": "로그인",
+      "loading": "로그인 중...",
+      "error": "자격증명이 올바르지 않습니다"
+    },
+    "signup": {
+      "title": "계정 만들기",
+      "username": "사용자명",
+      "email": "이메일",
+      "password": "비밀번호",
+      "submit": "가입",
+      "loading": "계정 만드는 중..."
+    }
   }
 }

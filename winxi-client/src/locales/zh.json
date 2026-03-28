@@ -76,5 +76,23 @@
       "subheadline": "加入成千上万共同构建灵感板未来的设计师行列。",
       "btn": "立即开始"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "登录",
+      "email": "电子邮件或用户名",
+      "password": "密码",
+      "submit": "登录",
+      "loading": "登录中...",
+      "error": "凭证无效"
+    },
+    "signup": {
+      "title": "创建帐户",
+      "username": "用户名",
+      "email": "电子邮件",
+      "password": "密码",
+      "submit": "注册",
+      "loading": "创建帐户中..."
+    }
   }
 }
