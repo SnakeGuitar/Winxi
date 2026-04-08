@@ -9,5 +9,6 @@ COPY . .
 
 # Set default port
 ENV PORT=8000
+ENV PYTHONUNBUFFERED=1
 
 CMD ["sh", "-c", "uvicorn winxi.main:app --host 0.0.0.0 --port ${PORT}"]
