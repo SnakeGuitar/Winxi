@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 
@@ -16,6 +17,19 @@ def include_router(app):
 
 
 app = FastAPI(title="Winxi API", version="0.1.0")
+
+# CORS — allow configured origins (comma-separated in env var) or localhost for dev
+_raw_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+origins = [o.strip() for o in _raw_origins.split(",")]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 include_router(app)
 
 
