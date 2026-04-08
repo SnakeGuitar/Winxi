@@ -7,6 +7,9 @@ import os
 load_dotenv()
 DB_URL = os.getenv("DATABASE_URL", "sqlite:///./sql_app.db")
 
+if DB_URL.startswith("postgres://"):
+    DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
+
 engine = create_engine(DB_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
