@@ -22,3 +22,8 @@ include_router(app)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to Winxi API", "docs": "/docs"}
+
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
